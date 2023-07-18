@@ -19,26 +19,25 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @NoArgsConstructor
-@Table(name = "Transaction")
 public class Transaction {
     
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO )
     private Long id;
 
-    @Column (nullable = false, name = "data_transferencia")
-    private Timestamp data_transferencia;
+    @Column (nullable = false)
+    private java.sql.Timestamp datatransferencia;
 
-    @Column (nullable = false, name = "valor")
+    @Column (nullable = false)
     private double valor;
 
-    @Column (nullable = false, length = 15, name = "tipo")
+    @Column (nullable = false, length = 15)
     private String tipo;
 
-    @Column (length = 50, name = "nome")
+    @Column (length = 50)
     private String nomeOperador;
 
     @Column (nullable = false)
-    private int accountId;
+    private int accountid;
 
 }
