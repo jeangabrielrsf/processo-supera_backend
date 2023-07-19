@@ -44,9 +44,6 @@ public class TransactionsController {
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/transferencias/{initialDate}/{finalDate}") 
         public List<Transaction> listDatesTransaction(@PathVariable String initialDate, @PathVariable String finalDate) {
-            System.out.println("data inicial: " + initialDate);
-            System.out.println("data final: " + finalDate);
-            System.out.println(transactionService.listByDateRange(initialDate, finalDate));
             return transactionService.listByDateRange(initialDate, finalDate);
         }
     }
