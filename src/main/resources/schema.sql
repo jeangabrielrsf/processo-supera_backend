@@ -11,7 +11,7 @@ CREATE TABLE Transaction
     datatransferencia TIMESTAMP WITH TIME ZONE NOT NULL,
     valor NUMERIC (20,2) NOT NULL,
     tipo VARCHAR(15) NOT NULL,
-    nomeOperador VARCHAR (50),
+    nomeoperador VARCHAR (50),
     accountid INT NOT NULL,
 
         CONSTRAINT FK_ACCOUNT

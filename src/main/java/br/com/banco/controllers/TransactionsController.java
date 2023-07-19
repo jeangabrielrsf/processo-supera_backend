@@ -1,7 +1,10 @@
 package br.com.banco.controllers;
 
 import java.security.Timestamp;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.TimeZone;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -39,8 +42,11 @@ public class TransactionsController {
     }
 
     @CrossOrigin(origins = "http://localhost:3000")
-    @GetMapping("/transferencias/{initialDate}-{finalDate}") 
-        public List<Transaction> listDatesTransaction(@PathVariable java.sql.Timestamp initialDate, java.sql.Timestamp finalDate) {
+    @GetMapping("/transferencias/{initialDate}/{finalDate}") 
+        public List<Transaction> listDatesTransaction(@PathVariable String initialDate, @PathVariable String finalDate) {
+            System.out.println("data inicial: " + initialDate);
+            System.out.println("data final: " + finalDate);
+            System.out.println(transactionService.listByDateRange(initialDate, finalDate));
             return transactionService.listByDateRange(initialDate, finalDate);
         }
     }

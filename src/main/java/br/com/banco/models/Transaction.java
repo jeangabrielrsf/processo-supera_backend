@@ -1,7 +1,9 @@
 package br.com.banco.models;
 
 import java.security.Timestamp;
+import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,7 +28,7 @@ public class Transaction {
     private Long id;
 
     @Column (nullable = false)
-    private java.sql.Timestamp datatransferencia;
+    private String datatransferencia;
 
     @Column (nullable = false)
     private double valor;
@@ -35,7 +37,7 @@ public class Transaction {
     private String tipo;
 
     @Column (length = 50)
-    private String nomeOperador;
+    private String nomeoperador;
 
     @Column (nullable = false)
     private int accountid;
